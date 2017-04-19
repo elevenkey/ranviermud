@@ -73,13 +73,23 @@ module.exports = (srcPath, bundlePath) => {
     return [line1, line2, line3];
   }
 
+  function charWidth(strs){
+    var c = 0;
+    for(var i = 0; i < strs.length; i++) {
+      if (/[\u4e00-\u9fa5]/.test(strs.charAt(i))) {
+        c++;
+      }
+    }
+    return c;
+  }
+
   function lookRoom(state, player) {
     const room = player.room;
 
     const [ line1, line2, line3 ] = getCompass(player);
 
     // map is 15 characters wide, room is formatted to 80 character width
-    B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title) + line1 + '</b></yellow>');
+    B.sayAt(player, '<yellow><b>' + sprintf('%-65s', room.title).substr(0, 65-charWidth(room.title)) + line1 + '</b></yellow>');
     B.sayAt(player, B.line(60) + B.line(5, ' ') + line2);
     B.sayAt(player, B.line(65, ' ') + '<yellow><b>' + line3 + '</b></yellow>');
 

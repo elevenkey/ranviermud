@@ -81,10 +81,9 @@
     - roomId: "limbo:5"
       direction: north
 - id: 7
-  title: "Boss Training Room"
+  title: "技能训练房"
   description: >-
-    The dome in this section is bright red, the pure green grass is replaced with a smooth white surface. The ground
-    beneath your feet has the word "Danger" in bright red letters tiled across the area.
+    这一个神秘的房间，房顶泛出神秘的<red>亮红色</red>，四周的墙壁是纯白色，在你脚下的地面有着大大的“危险”两个字.
   npcs:
     - id: "limbo:5"
       respawnChance: 50

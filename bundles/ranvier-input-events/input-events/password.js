@@ -28,7 +28,7 @@ module.exports = (srcPath) => {
       }
 
       if (!args.dontwelcome) {
-        write("Enter your password: ");
+        write("输入密码: ");
         socket.toggleEcho();
       }
 
@@ -36,7 +36,7 @@ module.exports = (srcPath) => {
         socket.toggleEcho();
 
         if (!args.account.checkPassword(pass.toString().trim())) {
-          write("<red>Incorrect password.</red>\r\n");
+          write("<red>密码错误.</red>\r\n");
           passwordAttempts[name]++;
 
           return socket.emit('password', socket, args);

@@ -33,7 +33,7 @@ module.exports = (srcPath) => {
         account = state.AccountManager.loadAccount(name);
 
         if (account.banned) {
-          socket.write('This account has been banned.\r\n');
+          socket.write('此账号已被禁用.\r\n');
           socket.destroy();
           return;
         }

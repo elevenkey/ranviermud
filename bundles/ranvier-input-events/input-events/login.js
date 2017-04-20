@@ -8,7 +8,7 @@ module.exports = (srcPath) => {
   return {
     event: state => (socket, args) => {
       if (!args || !args.dontwelcome) {
-        socket.write('Welcome, what is your name? ');
+        socket.write('你好, 请输入账号? ');
       }
 
       socket.once('data', name => {

@@ -21,7 +21,7 @@ module.exports = (srcPath) => {
       * Can create new (if less than 3 living chars)
       */
       say("\r\n------------------------------");
-      say("|      Choose your fate");
+      say("|      选择功能");
       say("------------------------------");
 
       // This just gets their names.
@@ -37,13 +37,13 @@ module.exports = (srcPath) => {
       // Configure account options menu
       if (canAddCharacter) {
         options.push({
-          display: 'Change Password',
+          display: '修改密码',
           onSelect: () => {
             socket.emit('change-password', socket, { account, nextStage: 'choose-character' });
           },
         });
         options.push({
-          display: 'Create New Character',
+          display: '创建新角色',
           onSelect: () => {
             handleMultiplaying();
             socket.emit('create-player', socket, { account });
@@ -52,7 +52,7 @@ module.exports = (srcPath) => {
       }
 
       if (characters.length) {
-        options.push({ display: "Login As:" });
+        options.push({ display: "登录:" });
         characters.forEach(char => {
           options.push({
             display: char,
@@ -109,7 +109,7 @@ module.exports = (srcPath) => {
 
       options.push({ display: "" });
       options.push({
-        display: 'Quit',
+        display: '退出',
         onSelect: () => socket.end(),
       });
 

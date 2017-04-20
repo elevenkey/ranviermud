@@ -6,7 +6,7 @@ module.exports = (srcPath) => {
   return {
     usage: 'who',
     command: (state) => (args, player) => {
-      Broadcast.sayAt(player, "<bold><red>                  Who's Online</bold></red>");
+      Broadcast.sayAt(player, "<bold><red>                  在线名单</bold></red>");
       Broadcast.sayAt(player, "<bold><red>===============================================</bold></red>");
       Broadcast.sayAt(player, '');
 
@@ -16,7 +16,7 @@ module.exports = (srcPath) => {
         Broadcast.sayAt(player, ' * ' + otherPlayer.name);
       });
 
-      Broadcast.sayAt(player, numPlayers + ' total');
+      Broadcast.sayAt(player, '共 ' + numPlayers + ' 名玩家在线');
     }
   };
 };
